@@ -30,6 +30,8 @@ sites:
 assignees: [morgan254917]
 skipDescriptionUpdate: true
 skipTopicsUpdate: true
+skipHomepageUpdate: true
+skipDeleteIssues: true
 skipPoweredByReadme: true
 skipWorkflowUpdate: true
 status-website:

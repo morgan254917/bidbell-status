@@ -27,3 +27,13 @@ jobs:
           command: summary
         env:
           GH_PAT: ${{ github.token }}
+      - name: Present results without unhosted graph links
+        run: |
+          python3 scripts/render_summary.py
+          git config user.name "BidBell monitoring"
+          git config user.email "bidbell-monitoring@localhost"
+          git add README.md
+          if ! git diff --cached --quiet; then
+            git commit -m "Present verified endpoint status"
+            git push
+          fi
